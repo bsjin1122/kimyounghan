@@ -13,8 +13,12 @@ import hello.demo.member.MemoryMemberRepository;
 	excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 )
 public class AutoAppConfig {
-	@Bean(name = "memoryMemberRepository")
-	public MemberRepository memberRepository() {
-		return new MemoryMemberRepository();
-	}
+	// spring.main.allow-bean-definition-overriding=true --> application.properties 에 오버라이딩 가능 설정
+	// @Bean(name = "memoryMemberRepository")
+	// public MemberRepository memberRepository() {
+	// 	return new MemoryMemberRepository();
+	// }
+
+
+
 }

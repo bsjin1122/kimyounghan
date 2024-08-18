@@ -18,8 +18,6 @@ public class AppConfig { // 환경 구성을 여기서 함.
 	// @Bean memberService -> new MemoryMemberRepository()
 	// @Bean orderService -> new MemoryMemberRepository() (이거 싱글톤이 깨지는 거 아닌가요)
 
-
-
 	@Bean
 	public MemberService memberService(){
 		// 1번
@@ -36,6 +34,7 @@ public class AppConfig { // 환경 구성을 여기서 함.
 	public OrderService orderService(){
 		// 2번? 3번?
 		System.out.println("call AppConfig.memberRepository");
+		// return null;
 		return new OrderServiceImpl(memberRepository(), discountPolicy());
 	}
 	@Bean

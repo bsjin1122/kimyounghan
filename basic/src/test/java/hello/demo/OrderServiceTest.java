@@ -25,8 +25,6 @@ public class OrderServiceTest {
 		orderService = appConfig.orderService();
 	}
 
-
-
 	@Test
 	void createOrder(){
 		Long memberId = 1L;
@@ -35,4 +33,13 @@ public class OrderServiceTest {
 		Order order = orderService.createOrder(memberId, "itemA", 10000);
 		Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
 	}
+
+	// @Test
+	// @DiaplayName("필드 주입 방법 안 되는 것 test")
+	// void fieldInjectionTest(){
+	// 	OrderServiceImpl orderService = new OrderServiceImpl();
+	// 	orderService.createOrder(1L, "itemA", 10000);
+	// }
+
+
 }
